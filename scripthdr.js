@@ -48,8 +48,8 @@ function init() {
 	THREE.DefaultLoadingManager.onLoad = function ( ) {
 
 		// console.log( 'Loading Complete!');
-		loading.classList.add('preloader-done')
-		content.classList.remove('content-loading')
+		// loading.classList.add('preloader-done')
+		// content.classList.remove('content-loading')
 		headline.classList.add('appearing')
 		text.classList.add('appearing')
 		technical.classList.add('appearing')
@@ -63,22 +63,6 @@ function init() {
 	};
 	
 
-	// const loadingManager = new THREE.LoadingManager;
-
-	
-	// 	loadingManager.onLoad = function ( ) {
-
-	// 		console.log( 'Loading Complete!');
-		
-	// 	};
-
-		// const loading = document.querySelector('.preloader');
-		// loading.classList.add('preloader-done')
-
-		// console.log( 'Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' );
-
-		// optional: remove loader from DOM via event listener
-		// loadingScreen.addEventListener( 'transitionend', onTransitionEnd );
 
 
 	raycaster = new THREE.Raycaster();
