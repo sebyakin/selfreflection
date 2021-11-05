@@ -15,10 +15,12 @@ const qr = document.querySelector('.qr');
 const credits = document.querySelector('.credits');
 
 const loading = document.querySelector('.preloader');
-// const jingle = new Audio('/assets/high-jingle.mp3');
+const jingle = new Audio('/assets/high-jingle.mp3');
 
 
 window.addEventListener('load', () => { 
+
+  console.log('(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧')
   
   // headline.classList.add('appearing')
   // text.classList.add('appearing')
