@@ -1,0 +1,265 @@
+// todo
+// изменять переменные при изменении media
+
+@font-face {
+  font-family: "Apoc";
+  src: url("/assets/Apoc-Regular-Trial.woff2") format("woff2");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+
+$t-base: 1.2vw;
+$t-headline: 10rem;
+$t-subhead: 4rem;
+$t-pills: 1.35rem;
+$t-credits: 1rem;
+$t-t-mono: "Inconsolata", monospace;
+
+$max-width: 640px;
+
+$c-white: #fff;
+$c-black: #000;
+
+html {
+  font-size: $t-base;
+  background-color: darkgray;
+}
+
+body {
+  overflow: hidden;
+  font-family: "Apoc", "Times New Roman", Times, serif;
+  color: $c-white;
+}
+
+.preloader {
+  background-color: $c-white;
+  color: #000;
+  position: absolute;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  transition: opacity 0.5s ease;
+}
+
+.preloader-done {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.canvas-wrapper {
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.appearing {
+  animation: load 1000ms ease-in;
+  animation-fill-mode: backwards;
+}
+
+.content {
+  width: calc(100vw - 2rem);
+  height: calc(100vh - 2rem);
+  padding: 1rem;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  position: absolute;
+
+  @media only screen and (max-width: $max-width) {
+    width: calc(100vw - 5rem);
+    height: calc(100vh - 5rem);
+    padding: 2.5rem;
+  }
+}
+
+.content-loading {
+  display: none;
+  visibility: hidden;
+}
+
+.headline {
+  animation-delay: calc(1 * 200ms);
+  mix-blend-mode: difference;
+
+  h1 {
+    font-size: $t-headline;
+
+    @media only screen and (max-width: $max-width) {
+      font-size: 14rem;
+    }
+  }
+
+  @media only screen and (max-width: $max-width) {
+    margin-bottom: 2rem;
+  }
+}
+
+.text {
+  animation-delay: calc(2 * 200ms);
+
+  h2 {
+    font-size: $t-subhead;
+    mix-blend-mode: difference;
+
+    @media only screen and (max-width: $max-width) {
+      line-height: 110%;
+    }
+  }
+}
+
+.bits {
+  display: flex;
+  justify-content: start;
+}
+
+.bit {
+  transition: all 2s ease;
+  filter: blur(200px);
+  opacity: 0;
+}
+
+.bit-visible {
+  filter: blur(0);
+  opacity: 1;
+}
+
+.technical {
+  display: flex;
+  align-items: flex-end;
+  justify-content: start;
+  animation-delay: calc(3 * 200ms);
+
+  @media only screen and (max-width: $max-width) {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  .button {
+    background-color: $c-white;
+    color: black;
+    cursor: pointer;
+    margin-left: 0.5rem;
+
+    @media only screen and (max-width: $max-width) {
+      margin-left: 0rem;
+      margin-top: 1rem;
+    }
+
+    &:hover {
+      background-color: #e3e3e3;
+    }
+  }
+}
+
+.pill {
+  background-color: #88ff86;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: $t-pills;
+  color: black;
+
+  @media only screen and (max-width: $max-width) {
+    padding: 1.9rem;
+    border-radius: 2.3rem;
+    font-size: 3.4rem;
+    line-height: 110%;
+  }
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.qr {
+  display: flex;
+  align-items: flex-end;
+
+  .circle {
+    width: 14vw;
+    height: 14vw;
+    border-radius: 50%;
+    background-color: $c-white;
+    display: grid;
+    place-items: center;
+  }
+
+  .circle::after {
+    content: "Scan code for AR experience 🕸";
+    font-family: $t-t-mono;
+    color: $c-black;
+    font-size: 0.7rem;
+    text-align: center;
+    transform: translateY(0.06vw);
+    width: 60%;
+  }
+
+  .qr-code {
+    width: 50%;
+    height: 50%;
+    transform: translateY(0.9vw);
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.credits {
+  position: fixed;
+  z-index: 1;
+  bottom: 0.5rem;
+  mix-blend-mode: difference;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+
+  @media only screen and (max-width: $max-width) {
+    padding: 0.5rem;
+    mix-blend-mode: difference;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  a {
+    color: $c-white;
+    text-decoration: none;
+
+    &:hover {
+      color: yellow;
+    }
+  }
+}
+
+.blend {
+  mix-blend-mode: difference;
+}
+
+.blink {
+  animation: blink 1s infinite alternate ease-in-out;
+}
+
+@keyframes blink {
+  from {
+    color: $c-black;
+  }
+  to {
+    color: $c-white;
+  }
+}
+
+@keyframes load {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,283 @@
+$max-width: 780px;
+
+html {
+  background-color: black;
+}
+
+body {
+  font-family: "Apoc", "Times New Roman", Times, serif;
+}
+
+.credits {
+  width: 100vw;
+  height: 5vh;
+  position: absolute;
+  // padding-left: 2vw;
+  // padding-right: 2vw;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1vw;
+  text-align: center;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  display: none;
+  visibility: hidden;
+  mix-blend-mode: difference;
+  // opacity: .5;
+  p {
+    margin: 1vw;
+  }
+}
+
+.credits-visible {
+  display: flex;
+  visibility: visible;
+}
+
+img {
+  width: 100%;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // z-index: 2;
+  color: rgb(255, 255, 255);
+  // mix-blend-mode: difference;
+}
+
+.main {
+  width: 98vw;
+  height: 99vh;
+  display: flex;
+  flex-direction: column;
+
+  @media only screen and (max-width: $max-width) {
+    width: 94vw;
+    height: 96vh;
+  }
+}
+
+.dynamic {
+  width: 100vw;
+  overflow: hidden;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  bottom: 2vw;
+  left: 1vw;
+  justify-content: flex-start;
+
+  @media only screen and (max-width: $max-width) {
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    left: 0;
+    bottom: 6vw;
+  }
+}
+
+.dynamic-center {
+  justify-content: center;
+}
+
+.dynamic-column {
+  flex-direction: column;
+}
+
+.title {
+  transition: all 2s ease;
+  opacity: 0;
+  margin-bottom: 1vw;
+  mix-blend-mode: difference;
+
+  @media only screen and (max-width: $max-width) {
+    margin-bottom: 4vw;
+  }
+
+  h1 {
+    text-transform: uppercase;
+    font-size: 7vw;
+
+    @media only screen and (max-width: $max-width) {
+      font-size: 15vw;
+    }
+  }
+}
+
+.description {
+  transition: all 2s ease;
+  opacity: 0;
+  margin-bottom: 2vw;
+  mix-blend-mode: difference;
+
+  p {
+    font-size: 5vw;
+    line-height: 105%;
+
+    @media only screen and (max-width: $max-width) {
+      font-size: 8vw;
+    }
+  }
+}
+
+.inprogress {
+  background-color: #88ff86;
+  @media only screen and (max-width: $max-width) {
+    margin-bottom: 1vw;
+    line-height: 110%;
+  }
+}
+
+.technical {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1vw;
+  padding: 1vw;
+  font-family: "Inconsolata", monospace;
+  font-size: 1.4vw;
+  text-align: center;
+  color: black;
+  height: 2vw;
+  margin-left: 1vw;
+
+  @media only screen and (max-width: $max-width) {
+    border-radius: 4vw;
+    padding: 2vw 4vw 2vw 4vw;
+    font-family: "Inconsolata", monospace;
+    font-size: 4vw;
+    text-align: center;
+    color: black;
+    width: max-content;
+    height: 14vw;
+    margin-left: 0;
+    width: 80vw;
+    text-align: left;
+  }
+}
+
+.button {
+  display: none;
+  visibility: hidden;
+  background-color: white;
+  cursor: pointer;
+}
+
+.button:hover {
+  // opacity: .8;
+  background-color: #e3e3e3;
+}
+
+.show {
+  display: flex;
+  visibility: visible;
+}
+
+.identity {
+  width: 98vw;
+  height: 99vh;
+  display: none;
+  visibility: hidden;
+  flex-direction: row;
+
+  @media only screen and (max-width: $max-width) {
+    width: 94vw;
+    height: 96vh;
+  }
+}
+
+.identity-visible {
+  display: flex;
+  visibility: visible;
+}
+
+.bit {
+  transition: all 6s ease;
+  background-color: #88ff86;
+  margin-left: 0;
+  filter: blur(200px);
+  opacity: 0;
+}
+
+.bit-visible {
+  filter: blur(0);
+  opacity: 1;
+}
+
+.circle {
+  width: 14vw;
+  height: 14vw;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  visibility: hidden;
+}
+
+.circle::after {
+  content: "Scan code for AR experience 🕸";
+  font-family: "Inconsolata", monospace;
+  font-size: 1vw;
+  text-align: center;
+  width: 60%;
+  margin-top: 0.5vw;
+}
+
+.qr-code {
+  width: 50%;
+  height: 50%;
+  margin-top: 1vw;
+}
+
+.circle-visible {
+  display: flex;
+  visibility: visible;
+}
+
+.blink {
+  animation: blink 1s infinite alternate ease-in-out;
+}
+
+@keyframes blink {
+  from {
+    color: rgb(0, 0, 0);
+  }
+  to {
+    color: rgb(255, 255, 255);
+  }
+}
+
+.cursor {
+  width: 10.4vw;
+  height: 10.4vw;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 3;
+  left: var(--mouse-x);
+  top: var(--mouse-y);
+  transform: translate(-50%, -50%);
+  cursor: none;
+}
+
+.cursor-hidden {
+  display: none !important;
+}
+
+.canvas-visible {
+  opacity: 1;
+}
