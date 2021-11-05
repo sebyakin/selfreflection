@@ -15,6 +15,7 @@ const qr = document.querySelector('.qr');
 const credits = document.querySelector('.credits');
 
 const loading = document.querySelector('.preloader');
+// const jingle = new Audio('/assets/high-jingle.mp3');
 
 
 window.addEventListener('load', () => { 
@@ -145,11 +146,11 @@ const phrases = [
 'You control what you say but not what the other people hear',
 ]
 
-  setTimeout( () => {
-    analyse.textContent = 'Your virtual identity is ready.'
-    analyse.classList.remove('blink')
-    button.classList.remove('hidden')    
-  }, 1000)
+  // setTimeout( () => {
+  //   analyse.textContent = 'Your virtual identity is ready.'
+  //   analyse.classList.remove('blink')
+  //   button.classList.remove('hidden')    
+  // }, 1000)
 
 
 button.onclick = function() {
@@ -161,10 +162,17 @@ button.onclick = function() {
   qr.classList.remove('hidden')
   credits.classList.remove('hidden')
 
+  
+
   bit.innerText = phrases[Math.floor(Math.random()*phrases.length)];
 
   setTimeout(function(){
-    bit.classList.add('bit-visible')  
+    bit.classList.add('bit-visible') 
+
+    setTimeout(function(){
+      jingle.play();
+    }, 1200) 
+
   }, 2000) 
 
   setTimeout(function(){
@@ -174,6 +182,11 @@ button.onclick = function() {
   const newPhrase = () => {
     bit.innerText = phrases[Math.floor(Math.random()*phrases.length)];
     bit.classList.add('bit-visible')  
+
+    setTimeout(function(){
+      jingle.play();
+    }, 1200) 
+
 
     setTimeout(function(){
       bit.classList.remove('bit-visible')

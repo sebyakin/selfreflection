@@ -53,6 +53,12 @@ function init() {
 		headline.classList.add('appearing')
 		text.classList.add('appearing')
 		technical.classList.add('appearing')
+
+		setTimeout( () => {
+			analyse.textContent = 'Your virtual identity is ready.'
+			analyse.classList.remove('blink')
+			button.classList.remove('hidden')    
+		  }, 4000)
 	
 	};
 	
@@ -124,7 +130,7 @@ function init() {
 
 
 	// render
-	renderer = new THREE.WebGLRenderer( { antialias: true } );
+	renderer = new THREE.WebGLRenderer( { antialias: true, powerPreference: "high-performance" } );
 
 	renderer.setPixelRatio( window.devicePixelRatio );
 	renderer.setSize( window.innerWidth, window.innerHeight );

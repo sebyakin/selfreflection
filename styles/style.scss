@@ -62,9 +62,9 @@ body {
 }
 
 .content {
-  width: calc(100vw - 2rem);
-  height: calc(100vh - 2rem);
-  padding: 1rem;
+  width: calc(100vw - 1rem);
+  height: calc(100vh - 1rem);
+  padding: 0.5rem;
   display: grid;
   grid-template-rows: auto auto 1fr auto;
   position: absolute;
@@ -117,7 +117,7 @@ body {
 }
 
 .bit {
-  transition: all 2s ease;
+  transition: all 1.3s ease-in;
   filter: blur(200px);
   opacity: 0;
 }
@@ -179,30 +179,22 @@ body {
 .qr {
   display: flex;
   align-items: flex-end;
+  justify-content: center;
 
   .circle {
-    width: 14vw;
-    height: 14vw;
-    border-radius: 50%;
+    border-radius: 0.4vw;
+    width: 6vw;
+    height: 6vw;
+    margin-bottom: 1.5vw;
     background-color: $c-white;
     display: grid;
     place-items: center;
   }
 
-  .circle::after {
-    content: "Scan code for AR experience 🕸";
-    font-family: $t-t-mono;
-    color: $c-black;
-    font-size: 0.7rem;
-    text-align: center;
-    transform: translateY(0.06vw);
-    width: 60%;
-  }
-
   .qr-code {
-    width: 50%;
-    height: 50%;
-    transform: translateY(0.9vw);
+    width: 100%;
+    height: 100%;
+    // transform: translateY(-1.5vw);
     img {
       width: 100%;
     }
@@ -210,8 +202,11 @@ body {
 }
 
 .credits {
+  width: calc(100vw - 1rem);
   position: fixed;
   z-index: 1;
+  right: 0.5rem;
+  left: 0.5rem;
   bottom: 0.5rem;
   mix-blend-mode: difference;
   font-family: Arial, Helvetica, sans-serif;
