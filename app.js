@@ -15,7 +15,7 @@ const qr = document.querySelector('.qr');
 const credits = document.querySelector('.credits');
 
 const loading = document.querySelector('.preloader');
-const jingle = new Audio('/assets/high-jingle.mp3');
+const jingle = new Audio('/assets/low-jingle.mp3');
 
 
 window.addEventListener('load', () => { 

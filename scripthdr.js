@@ -47,9 +47,9 @@ function init() {
 
 	THREE.DefaultLoadingManager.onLoad = function ( ) {
 
-		// console.log( 'Loading Complete!');
-		// loading.classList.add('preloader-done')
-		// content.classList.remove('content-loading')
+		console.log( 'Loading Complete!');
+		loading.classList.add('preloader-done')
+		content.classList.remove('content-loading')
 		headline.classList.add('appearing')
 		text.classList.add('appearing')
 		technical.classList.add('appearing')
@@ -71,7 +71,7 @@ function init() {
 	new RGBELoader()
 		.setDataType( THREE.UnsignedByteType )
 		.setPath( 'skybox/' )
-		.load( 'photo.hdr', function ( texture ) {
+		.load( 'photo-min.hdr', function ( texture ) {
 
 		var envMap = pmremGenerator.fromEquirectangular( texture ).texture;
 

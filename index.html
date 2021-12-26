@@ -5,6 +5,7 @@
     <title>Selfreflection ONLINE</title>
     <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="./styles/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <meta property="og:title" content="Self-reflection" />
     <meta property="og:site_name" content="Self-reflection.online" />
@@ -110,9 +111,11 @@
     />
   </head>
   <body>
-    <!-- <div class="preloader">Loading is happening just right now</div> -->
+    <div class="preloader">
+      <p class="blink">Loading is happening just right now</p>
+    </div>
 
-    <section class="content">
+    <section class="content content-loading">
       <div class="headline">
         <h1>Self-Reflection</h1>
       </div>
@@ -147,6 +150,10 @@
     </section>
 
     <div class="credits hidden">
+      <a href="https://www.instagram.com/ar/419426756403911/"
+        ><div class="button pill ar">Use AR effect on Instagram</div></a
+      >
+
       <a
         href="https://www.instagram.com/olyabazilevich/"
         target="_blank"
@@ -155,6 +162,7 @@
       >
 
       <a
+        class="ar-experience"
         href="https://www.instagram.com/ar/419426756403911/"
         target="_blank"
         rel="noopener noreferrer"
